@@ -176,6 +176,8 @@ namespace KinectImageViewer
 
         private void importBtn_Click(object sender, RoutedEventArgs e)
         {
+            string[] ext = { ".jpg", ".jpeg", ".gif", ".png", ".bmp", ".tiff" };
+            String directoryPath;
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Multiselect = true;
             openFileDialog.Filter = "JPEG|*.jpg|Bitmaps|*.bmp";
@@ -185,6 +187,10 @@ namespace KinectImageViewer
                 picFiles = openFileDialog.FileNames;
                 currentImg = 0;
                 ShowCurrentImage();
+                directoryPath = System.IO.Path.GetDirectoryName(openFileDialog.FileName);
+                picFiles = Directory.GetFiles(directoryPath, "*.*")
+                    .Where(f => ext.Contains(new FileInfo(f).Extension.ToLower())).ToArray();
+                Console.Write(picFiles[0]);
             }
         }
 

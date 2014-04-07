@@ -417,5 +417,12 @@ namespace KinectImageViewer
             //VideoScreenShot.CaptureScreenAsync(source, TimeSpan.FromSeconds(10), "image0", .1, makeJpeg, makeThumbnails);
             //VideoScreenShot.CaptureScreenAsync(source, TimeSpan.FromSeconds(43) + TimeSpan.FromMilliseconds(760), "image1", makeThumbnails);
         }
+
+        private void slideBtn_Click(object sender, RoutedEventArgs e)
+        {
+            FullscreenPics f = new FullscreenPics(currentImg, this);
+            f.Show();
+            f.slideShow();
+        }
     }
 }

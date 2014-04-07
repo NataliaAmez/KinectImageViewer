@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Windows.Threading;
 
 namespace KinectImageViewer
 {
@@ -26,6 +27,7 @@ namespace KinectImageViewer
         protected string[] picFiles;
         protected int currentImg = 0;
         MainWindow main;
+        private DispatcherTimer slide_timer = new DispatcherTimer();
 
         public FullscreenPics(int shownImg, MainWindow m)
         {
@@ -62,6 +64,28 @@ namespace KinectImageViewer
                 ShowCurrentImage();
                 main.setCurrentImg(currentImg);
             }
+        }
+        private void nextImage()
+        {
+            if (picFiles.Length > 0)
+            {
+                currentImg = currentImg == picFiles.Length - 1 ? 0 : ++currentImg;
+                ShowCurrentImage();
+                main.setCurrentImg(currentImg);
+            }
+        }
+
+        public void slideShow()
+        {
+            slide_timer.Interval = TimeSpan.FromMilliseconds(2000);
+            slide_timer.Tick += ticks_Tick;
+            slide_timer.Start();
+        }
+
+        private void ticks_Tick(object sender, EventArgs e)
+        {
+            Console.WriteLine("Blah blah");
+            nextImage();
         }
 
         protected void ShowCurrentImage()

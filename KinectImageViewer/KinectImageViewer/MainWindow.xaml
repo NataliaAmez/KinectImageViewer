@@ -194,7 +194,7 @@
                             <ImageBrush ImageSource="folder_picture_2.png" Stretch="Uniform"/>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="slideBtn" Content="" HorizontalAlignment="Left" Height="207.8" Margin="755,260.75,0,0" VerticalAlignment="Top" Width="224.374" Focusable="False" ToolTip="Slideshow">
+                    <Button x:Name="slideBtn" Content="" HorizontalAlignment="Left" Height="207.8" Margin="755,260.75,0,0" VerticalAlignment="Top" Width="224.374" Focusable="False" ToolTip="Slideshow" Click="slideBtn_Click">
                         <Button.OpacityMask>
                             <ImageBrush Stretch="Uniform" ImageSource="windows_media_player.png"/>
                         </Button.OpacityMask>

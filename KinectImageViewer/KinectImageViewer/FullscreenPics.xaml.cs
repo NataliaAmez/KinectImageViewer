@@ -58,12 +58,7 @@ namespace KinectImageViewer
 
         private void nextBtn_Click(object sender, System.EventArgs e)
         {
-            if (picFiles.Length > 0)
-            {
-                currentImg = currentImg == picFiles.Length - 1 ? 0 : ++currentImg;
-                ShowCurrentImage();
-                main.setCurrentImg(currentImg);
-            }
+            nextImage();
         }
         private void nextImage()
         {
@@ -78,13 +73,12 @@ namespace KinectImageViewer
         public void slideShow()
         {
             slide_timer.Interval = TimeSpan.FromMilliseconds(2000);
-            slide_timer.Tick += ticks_Tick;
+            slide_timer.Tick += nextImage_Timer;
             slide_timer.Start();
         }
 
-        private void ticks_Tick(object sender, EventArgs e)
+        private void nextImage_Timer(object sender, EventArgs e)
         {
-            Console.WriteLine("Blah blah");
             nextImage();
         }
 
@@ -100,6 +94,7 @@ namespace KinectImageViewer
         private void Exit(object sender, System.EventArgs e)
         {
             main.setCurrentImg(currentImg);
+            slide_timer.Stop();
             this.Close();
         }
 

@@ -15,7 +15,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
-using System.Windows.Threading;
 
 namespace KinectImageViewer
 {
@@ -27,18 +26,21 @@ namespace KinectImageViewer
         protected string[] picFiles;
         protected int currentImg = 0;
         MainWindow main;
-        private DispatcherTimer slide_timer = new DispatcherTimer();
 
-        public FullscreenPics(int shownImg, MainWindow m, string[] pics)
+        public FullscreenPics(int shownImg, MainWindow m)
         {
             currentImg = shownImg;
             main = m;
-            picFiles = pics;
             InitializeComponent();            
         }
 
         private void OnLoad(object sender, RoutedEventArgs e)
         {
+            String i = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            string[] ext = { ".jpg", ".jpeg", ".gif", ".png", ".bmp", ".tiff" };
+            picFiles = Directory.GetFiles(i, "*.*")
+                .Where(f => ext.Contains(new FileInfo(f).Extension.ToLower())).ToArray();
+            Console.WriteLine(picFiles.Length);
             ShowCurrentImage();            
         }
 
@@ -54,28 +56,12 @@ namespace KinectImageViewer
 
         private void nextBtn_Click(object sender, System.EventArgs e)
         {
-            nextImage();
-        }
-        private void nextImage()
-        {
             if (picFiles.Length > 0)
             {
                 currentImg = currentImg == picFiles.Length - 1 ? 0 : ++currentImg;
                 ShowCurrentImage();
                 main.setCurrentImg(currentImg);
             }
-        }
-
-        public void slideShow()
-        {
-            slide_timer.Interval = TimeSpan.FromMilliseconds(2000);
-            slide_timer.Tick += nextImage_Timer;
-            slide_timer.Start();
-        }
-
-        private void nextImage_Timer(object sender, EventArgs e)
-        {
-            nextImage();
         }
 
         protected void ShowCurrentImage()
@@ -90,7 +76,6 @@ namespace KinectImageViewer
         private void Exit(object sender, System.EventArgs e)
         {
             main.setCurrentImg(currentImg);
-            slide_timer.Stop();
             this.Close();
         }
 

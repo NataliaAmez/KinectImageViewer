@@ -57,7 +57,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="VideoScreenShot.cs" />
     <Page Include="FullscreenPics.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -121,11 +120,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="appbar_close.png" />
-    <Resource Include="appbar_close_white.png" />
     <Resource Include="appbar_fullscreen.png" />
     <Resource Include="br_next.png" />
-    <Resource Include="br_next_yellow.png" />
     <Resource Include="file_movie.png" />
     <Resource Include="folder_pictures.png" />
     <Resource Include="folder_picture_2.png" />
@@ -136,10 +132,7 @@
     <Resource Include="images\market 034.jpg" />
     <Resource Include="images\market 039.jpg" />
     <Resource Include="images\market 040.jpg" />
-    <Resource Include="pause_inv.png" />
     <Resource Include="photo.png" />
-    <Resource Include="play_inv.png" />
-    <Resource Include="stop_inv.png" />
     <Resource Include="tools.png" />
     <Resource Include="windows_media_player.png" />
   </ItemGroup>

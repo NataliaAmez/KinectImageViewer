@@ -5,8 +5,37 @@
         Loaded="OnLoad">
     <Grid Background="Black" Margin="0,0,0,0">
         <Image x:Name="FullscreenImageBox" HorizontalAlignment="Center" Height="auto" VerticalAlignment="Center" Width="auto" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5"/>
-        <Button Content="Exit" HorizontalAlignment="Center" Height="42" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="92" Click="Exit"/>
-        <Button Content="Next" HorizontalAlignment="Center" Height="42" Margin="300,0,0,10" VerticalAlignment="Bottom" Width="87" Click="nextBtn_Click"/>
-        <Button Content="Previous" HorizontalAlignment="Center" Height="42" Margin="0,0,300,10" VerticalAlignment="Bottom" Width="89" Click="previousBtn_Click"/>
+        <Button Content="" HorizontalAlignment="Center" Height="62.4" Margin="449.865,0,454.665,4" VerticalAlignment="Bottom" Width="110" Click="Exit" Focusable="False">
+        	<Button.OpacityMask>
+        		<ImageBrush Stretch="Uniform" ImageSource="appbar_close.png"/>
+        	</Button.OpacityMask>
+        	<Button.Background>
+        		<ImageBrush Stretch="Uniform" ImageSource="appbar_close.png"/>
+        	</Button.Background>
+        </Button>
+        <Button Content="" HorizontalAlignment="Center" Height="42" Margin="613.765,0,360.565,10" VerticalAlignment="Bottom" Width="40.2" Click="nextBtn_Click" Focusable="False">
+        	<Button.OpacityMask>
+        		<ImageBrush ImageSource="br_next_yellow.png" Stretch="Uniform"/>
+        	</Button.OpacityMask>
+        	<Button.Background>
+        		<ImageBrush Stretch="Uniform" ImageSource="br_next_yellow.png"/>
+        	</Button.Background>
+        </Button>
+        <Button Content="" HorizontalAlignment="Center" Height="42" Margin="354.765,0,618.765,10" VerticalAlignment="Bottom" Width="41" Click="previousBtn_Click" RenderTransformOrigin="0.5,0.5" Focusable="False">
+        	<Button.OpacityMask>
+        		<ImageBrush ImageSource="br_next_yellow.png" Stretch="Uniform"/>
+        	</Button.OpacityMask>
+        	<Button.RenderTransform>
+        		<TransformGroup>
+        			<ScaleTransform/>
+        			<SkewTransform/>
+        			<RotateTransform Angle="180"/>
+        			<TranslateTransform/>
+        		</TransformGroup>
+        	</Button.RenderTransform>
+        	<Button.Background>
+        		<ImageBrush ImageSource="br_next_yellow.png" Stretch="Uniform"/>
+        	</Button.Background>
+        </Button>
     </Grid>
 </Window>

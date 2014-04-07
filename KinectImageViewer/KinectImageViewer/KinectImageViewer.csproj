@@ -121,8 +121,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="appbar_close.png" />
+    <Resource Include="appbar_close_white.png" />
     <Resource Include="appbar_fullscreen.png" />
     <Resource Include="br_next.png" />
+    <Resource Include="br_next_yellow.png" />
     <Resource Include="file_movie.png" />
     <Resource Include="folder_pictures.png" />
     <Resource Include="folder_picture_2.png" />

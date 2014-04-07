@@ -29,20 +29,16 @@ namespace KinectImageViewer
         MainWindow main;
         private DispatcherTimer slide_timer = new DispatcherTimer();
 
-        public FullscreenPics(int shownImg, MainWindow m)
+        public FullscreenPics(int shownImg, MainWindow m, string[] pics)
         {
             currentImg = shownImg;
             main = m;
+            picFiles = pics;
             InitializeComponent();            
         }
 
         private void OnLoad(object sender, RoutedEventArgs e)
         {
-            String i = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-            string[] ext = { ".jpg", ".jpeg", ".gif", ".png", ".bmp", ".tiff" };
-            picFiles = Directory.GetFiles(i, "*.*")
-                .Where(f => ext.Contains(new FileInfo(f).Extension.ToLower())).ToArray();
-            Console.WriteLine(picFiles.Length);
             ShowCurrentImage();            
         }
 

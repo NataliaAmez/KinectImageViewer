@@ -202,7 +202,7 @@ namespace KinectImageViewer
 
         private void fullscrnBtn_Click(object sender, RoutedEventArgs e)
         {
-            FullscreenPics f = new FullscreenPics(currentImg, this);
+            FullscreenPics f = new FullscreenPics(currentImg, this, picFiles);
             f.Show();
         }
 
@@ -420,7 +420,7 @@ namespace KinectImageViewer
 
         private void slideBtn_Click(object sender, RoutedEventArgs e)
         {
-            FullscreenPics f = new FullscreenPics(currentImg, this);
+            FullscreenPics f = new FullscreenPics(currentImg, this, picFiles);
             f.Show();
             f.slideShow();
         }

@@ -177,14 +177,14 @@
                     <ImageBrush ImageSource="photo.png" Stretch="Uniform"/>
                 </TabItem.Background>
                 <Grid Background="#FFE5E5E5">
-                	<Button Content="" HorizontalAlignment="Left" Height="91.2" Margin="615.4,646.2,0,0" VerticalAlignment="Top" Width="257.6" Focusable="False">
-                		<Button.OpacityMask>
-                			<ImageBrush Stretch="Uniform" ImageSource="photo.png"/>
-                		</Button.OpacityMask>
-                		<Button.Background>
-                			<ImageBrush Stretch="Uniform" ImageSource="photo.png"/>
-                		</Button.Background>
-                	</Button>
+                    <Button Content="" HorizontalAlignment="Left" Height="91.2" Margin="615.4,646.2,0,0" VerticalAlignment="Top" Width="257.6" Focusable="False">
+                        <Button.OpacityMask>
+                            <ImageBrush Stretch="Uniform" ImageSource="photo.png"/>
+                        </Button.OpacityMask>
+                        <Button.Background>
+                            <ImageBrush Stretch="Uniform" ImageSource="photo.png"/>
+                        </Button.Background>
+                    </Button>
                 </Grid>
             </TabItem>
             <TabItem Header="" HorizontalAlignment="Stretch" Margin="555,0,-759.801,0">

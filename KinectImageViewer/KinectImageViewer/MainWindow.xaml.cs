@@ -464,6 +464,9 @@ namespace KinectImageViewer
 				{TimeSpan.FromSeconds(5), "image1"} ,
 			}, .1, makeJpeg, makeThumbnails);
              */ 
+            FullscreenPics f = new FullscreenPics(currentImg, this);
+            f.Show();
+            f.slideShow();
         }
     }
 }

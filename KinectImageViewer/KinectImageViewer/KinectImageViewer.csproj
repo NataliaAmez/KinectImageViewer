@@ -133,7 +133,10 @@
     <Resource Include="images\market 034.jpg" />
     <Resource Include="images\market 039.jpg" />
     <Resource Include="images\market 040.jpg" />
+    <Resource Include="pause_inv.png" />
     <Resource Include="photo.png" />
+    <Resource Include="play_inv.png" />
+    <Resource Include="stop_inv.png" />
     <Resource Include="tools.png" />
     <Resource Include="windows_media_player.png" />
   </ItemGroup>
